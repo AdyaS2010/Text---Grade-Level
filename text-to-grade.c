@@ -93,3 +93,14 @@ int count_sentences(string text)
     }
     return sentencecount;
 }
+
+float grade_level(int letters, int sentences, int words)
+{
+    float L = ((float) letters / (float) words) * 100;
+    float S = ((float) sentences / (float) words) * 100;
+
+    double index = (0.0588 * L) - (0.296 * S) - 15.8;
+    int grade_level = (int) round(index);
+
+    return grade_level;
+}
